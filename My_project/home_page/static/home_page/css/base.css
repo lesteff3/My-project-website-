@@ -1,0 +1,114 @@
+body {
+    background: #2c2b2b;
+}
+
+aside{
+   float: left;
+    background: #000000;
+    width: 20% ;
+    padding: 2.5%;
+    height: 112vh;
+    color: #ffffff;
+    border-right: 1px solid #ffffff;
+
+}
+
+aside img {
+    width: 100px;
+    float: left;
+    position: relative;
+    top: 630px;
+    left: -10px;
+}
+
+aside .logo {
+    color: #45a9fc;
+    font-size: 25px;
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+    top: 642px;
+    right: -10px;
+}
+
+aside h3 {
+    color: #ffc300;
+    font-size: 45px;
+    margin-top: 10px;
+    position: relative;
+    top: -120px;
+    left: -20px;
+}
+
+aside ul {list-style: none}
+aside ul li {
+    color: #ffffff;
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    transition: transform.3s ease;
+    position: relative;
+    top: -120px;
+    left: -20px;
+
+}
+
+aside ul li:hover, aside ul a:hover{
+    color: #058bad;
+    text-decoration: none;
+    transform: scale(1.05);
+
+}
+
+main .features {
+    float: left;
+    color: white;
+    margin-top: 69px;
+    text-align: center;
+    width: 75%;
+}
+
+main .features h1 {
+    font-size: 50px;
+    position: relative;
+    top: -50px;
+
+}
+main .features p {
+    max-width: 700px;
+    margin: 20px auto;
+    position: relative;
+    top: -50px;
+
+}
+
+a {
+    text-decoration: none;
+   }
+
+img, svg {
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    width: 750px;
+    top: -50px;
+    left: 150px;
+}
+
+.far {
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    top: 495px;
+    left: -130px;
+    color: white;
+}
+
+h4 {
+    font-size: 15px;
+    position: relative;
+    top: 400px;
+    left: -100px;
+
+
+}

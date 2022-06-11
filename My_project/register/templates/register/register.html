@@ -1,0 +1,14 @@
+{% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} {{ title }} {% endblock %}
+{% block content %}
+     <div class="features">
+        <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            {{form|crispy}}
+            <input name="register" type="submit" value="ЗАРЕГИСТРИРОВАТЬСЯ" class="btn btn-primary">
+        </form>
+    <hr>
+{#    <small> Есть существующий аккаунт?<a href="{% url 'login' %}">Войти</a></small><br>#}
+    </div>
+{% endblock content %}
