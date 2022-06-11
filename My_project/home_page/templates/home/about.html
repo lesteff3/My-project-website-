@@ -2,12 +2,38 @@
 
 
 {% block content %}
-    <div class="features">
+    {% if user.is_authenticated %}
+
+        <h4>Имя пользователя:</h4>
+        <ul>
+            <a href={%url 'index' %}><li><i class="fas fa-key"></i>Запись на ТО</li></a>
+            <a href="#"><li><i class="fas fa-calendar"></i>Запись на тест-драйв</li></a>
+            <a href={% url 'logout' %}><li><i class="fas fa-outdent"></i>Выйти</li></a>
+
+
+        </ul>
+
+                <li>
+                    <a class="nav-link" href="{% url 'register' %}"><i class="far fa-user-circle">{{user.username}}</i></a>
+                </li>
+
+        <div class='features'>
         <h1>Контакты</h1>
         <p>Находимся по адресу : Город Минск, улица Степянская, дом 60</p>
         <p>Время работы в будни : 9:00 - 18:00 Без обеда</p>
         <p>В выходные дни : 10:00 - 16:00 Без обеда</p>
         <p>Контактный номер телефона : +375445865118</p>
-        <button class="btn btn-danger">Главная</button>
-    </div>
+        <img src="https://imgproxy.autocrm.ru/JZBt5LI8Bs4qFOpzf5iA5-jyzbANHZUg-fjWUu0Aio0/rs:auto:0:0:1/dpr:1/q:100/g:sm/aHR0cHM6Ly8xOTUwMDQuc2VsY2RuLnJ1L3JlZi9iaWdfOGMzZjJhZjdkZTIxMzg4NzM2NmZmMDRjOTkwYjJhMmMuanBn.jpg">
+        </p>
+    {% else %}
+
+    <p class="about">
+        <h1>Контакты</h1>
+        <p>Находимся по адресу : Город Минск, улица Степянская, дом 60</p>
+        <p>Время работы в будни : 9:00 - 18:00 Без обеда</p>
+        <p>В выходные дни : 10:00 - 16:00 Без обеда</p>
+        <p>Контактный номер телефона : +375445865118</p>
+     <img src="https://imgproxy.autocrm.ru/JZBt5LI8Bs4qFOpzf5iA5-jyzbANHZUg-fjWUu0Aio0/rs:auto:0:0:1/dpr:1/q:100/g:sm/aHR0cHM6Ly8xOTUwMDQuc2VsY2RuLnJ1L3JlZi9iaWdfOGMzZjJhZjdkZTIxMzg4NzM2NmZmMDRjOTkwYjJhMmMuanBn.jpg">
+    </p>
+    {% endif %}
 {% endblock content %}

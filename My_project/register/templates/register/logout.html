@@ -4,7 +4,7 @@
 {% block title %} {{ title }} {% endblock %}
 {% block content %}
      <div class="features">
-     <h1>Вы успешно вышли из учетной записи</h1>
+     <h3>Вы успешно вышли из учетной записи</h3>
         <form method="POST" action="{% url 'login' %}">
 
             {% csrf_token %}
@@ -14,4 +14,5 @@
     <hr>
 {#    <small> Есть существующий аккаунт?<a href="{% url 'login' %}">Войти</a></small><br>#}
     </div>
+
 {% endblock content %}

@@ -4,8 +4,21 @@
 
 {% block content %}
 
+    {% if user.is_authenticated %}
 
-    <div class="features">
+        <h4>Имя пользователя:</h4>
+        <ul>
+            <a href={%url 'index' %}><li><i class="fas fa-key"></i>Запись на ТО</li></a>
+            <a href="#"><li><i class="fas fa-calendar"></i>Запись на тест-драйв</li></a>
+            <a href={% url 'logout' %}><li><i class="fas fa-outdent"></i>Выйти</li></a>
+
+
+        </ul>
+
+                <li>
+                    <a class="nav-link" href="{% url 'register' %}"><i class="far fa-user-circle">{{user.username}}</i></a>
+                </li>
+        <div class="features">
         <h1>Главная страница</h1>
         <p>Рады вас приветсвовать в нашем Авто-Салоне "Geely Motors"
             В меню "Каталог" вы можете узнать какие автомобили есть в наличии,
@@ -15,8 +28,25 @@
             себя автомобиль в экстремальных условиях .</p>
         <p>Также мы публикуем новости  о предстоящих новинках автомобилей марки "Geely"
             или о скидках на "ТО"</p>
+        <img src="https://imgproxy.autocrm.ru/rVBpMxaRgTgfYEfdym3fxjnDkmuErxLyZehpolDnW0Q/rs:auto:0:0:1/dpr:1/q:100/g:sm/aHR0cHM6Ly8xOTUwMDQuc2VsY2RuLnJ1L3JlZi9iaWdfYWFiOTkyNmU2NmQ5ZTAyYzQxZmM5MWI5NTk5MDRiMTIuanBn.jpg">
     </div>
-    <main>
+
+
+
+    {% else %}
+    <p class='register'>
+        <h3>Главная страница</h3>
+        <p>Рады вас приветсвовать в нашем Авто-Салоне "Geely Motors"
+            В меню "Каталог" вы можете узнать какие автомобили есть в наличии,
+            также если вы затрудняетесь с выбором автомобиля , наша компания предлогает вам
+            записаться на Тест-драйв(предварительно зарегистрироваться).
+            Где вы сможете проехать по специальной отведенной трассе, чтобы проверить как ведет
+            себя автомобиль в экстремальных условиях .</p>
+        <p>Также мы публикуем новости  о предстоящих новинках автомобилей марки "Geely"
+            или о скидках на "ТО"</p>
+
     <img src="https://imgproxy.autocrm.ru/rVBpMxaRgTgfYEfdym3fxjnDkmuErxLyZehpolDnW0Q/rs:auto:0:0:1/dpr:1/q:100/g:sm/aHR0cHM6Ly8xOTUwMDQuc2VsY2RuLnJ1L3JlZi9iaWdfYWFiOTkyNmU2NmQ5ZTAyYzQxZmM5MWI5NTk5MDRiMTIuanBn.jpg">
-    </main>
+
+    </p>
+    {% endif %}
 {% endblock content %}

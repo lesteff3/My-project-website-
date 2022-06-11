@@ -7,7 +7,7 @@ aside{
     background: #000000;
     width: 20% ;
     padding: 2.5%;
-    height: 112vh;
+    height: 170vh;
     color: #ffffff;
     border-right: 1px solid #ffffff;
 
@@ -71,14 +71,32 @@ main .features {
 main .features h1 {
     font-size: 50px;
     position: relative;
-    top: -50px;
+    top: -300px;
 
 }
 main .features p {
     max-width: 700px;
     margin: 20px auto;
     position: relative;
+    top: -290px;
+    left: 0px;
+
+}
+
+main .features h3 {
+    font-size: 50px;
+    position: relative;
     top: -50px;
+
+}
+
+main .features img{
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    width: 850px;
+    top: -240px;
+    left: 20px;
 
 }
 
@@ -91,24 +109,116 @@ img, svg {
     text-align: center;
     position: relative;
     width: 750px;
-    top: -50px;
+    top: 100px;
     left: 150px;
 }
 
 .far {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
     position: relative;
-    top: 495px;
-    left: -130px;
+    top: 400px;
+    left: -110px;
     color: white;
 }
 
 h4 {
     font-size: 15px;
     position: relative;
-    top: 400px;
-    left: -100px;
+    top: 600px;
+    left: -270px;
+    color: white;
+}
+
+
+ul {list-style: none}
+ul li {
+    color: #ffffff;
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    transition: transform.3s ease;
+    position: relative;
+    top: 350px;
+    left: -245px;
+
+}
+
+ul li:hover, aside ul a:hover{
+    color: #058bad;
+    text-decoration: none;
+    transform: scale(1.05);
+
+}
+
+h3, .register {
+
+    text-align: center;
+    width: 75%;
+    font-size: 40px;
+    position: relative;
+    top: 1px;
+    left: 122px;
+    color: white;
+
+
+}
+
+p, .register {
+    text-align: center;
+    width: 75%;
+    font-size: 20px;
+    position: relative;
+    top: 5px;
+    left: 122px;
+    color: white;
+
+
+}
+
+img, .register {
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    width: 800px;
+    top: 30px;
+    left: 120px;
+
+
+}
+
+h1, .about {
+
+    text-align: center;
+    width: 75%;
+    font-size: 40px;
+    position: relative;
+    top: 1px;
+    left: 122px;
+    color: white;
+
+
+}
+
+p, .about {
+    text-align: center;
+    width: 75%;
+    font-size: 20px;
+    position: relative;
+    top: 5px;
+    left: 122px;
+    color: white;
+
+
+}
+
+img, .about {
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    width: 800px;
+    top: 30px;
+    left: 120px;
 
 
 }
