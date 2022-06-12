@@ -1,0 +1,178 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+    <style type="text/css">
+
+        .alert-danger{
+            color: black;
+            float: left;
+            clear: both;
+            width: 700px;
+            margin: 40px 34%;
+            text-align: left;
+            position: relative;
+            top: -2812px;
+            left: -55px;
+        }
+
+        main .card-text h1{
+            font-size: 50px;
+            text-align: center;
+            clear: both;
+            float: left;
+            position: relative;
+            top: -2978px;
+            left: 305px;
+        }
+
+        main .card-text h2{
+            color: white;
+            font-size: 15px;
+            text-align: center;
+            clear: both;
+            float: left;
+            position: relative;
+            top: -2897px;
+            left: 305px;
+        }
+
+
+        main .card-text h3{
+                font-size: 20px;
+                text-align: left;
+                clear: both;
+                float: left;
+                position: relative;
+                top: -45px;
+                left: 80px;
+        }
+        main .card-text a {
+            color: wheat;
+            font-size: 15px;
+            text-align: left;
+            clear: both;
+            float: left;
+            position: relative;
+            top: -2924px;
+            left: 600px;
+}
+
+      .alert-info{
+          float: left;
+          clear: both;
+          width: 800px;
+          margin: 40px 34%;
+          text-align: left;
+          position: relative;
+          top: -2874px;
+          left: 30px;
+        }
+
+      main .register h3{
+                font-size: 20px;
+                text-align: left;
+                clear: both;
+                float: left;
+                position: relative;
+                top: -45px;
+                left: 80px;
+        }
+
+      main .register h1 {
+          text-align: center;
+          clear: both;
+          float: left;
+          font-size: 50px;
+          position: relative;
+          left: 367px;
+          top: -3035px;
+}
+
+      main .register h2{
+          text-align: center;
+          clear: both;
+          float: left;
+          font-size: 20px;
+          position: relative;
+          left: 183px;
+          top: -2891px;
+
+      }
+
+
+
+        main .register a{
+            color: wheat;
+            font-size: 15px;
+            text-align: left;
+            clear: both;
+            float: left;
+            position: relative;
+            top: -2924px;
+            left: 600px;
+        }
+
+        main .register p{
+            color: black;
+            font-size: 10px;
+            text-align: left;
+            clear: both;
+            float: left;
+            position: relative;
+            top: 10px;
+            left: 250px;
+
+        }
+      </style>
+
+  {% if user.is_authenticated %}
+
+        <h4>Имя пользователя:</h4>
+        <ul>
+            <a href={%url 'index' %}><li><i class="fas fa-key"></i>Запись на ТО</li></a>
+            <a href="#"><li><i class="fas fa-calendar"></i>Запись на тест-драйв</li></a>
+            <a href={% url 'logout' %}><li><i class="fas fa-outdent"></i>Выйти</li></a>
+        </ul>
+                <li>
+                    <a class="nav-link" href="{% url 'register' %}"><i class="far fa-user-circle">{{user.username}}</i></a>
+                </li>
+      <div class="card-text">
+        <h1>Каталог наших автомобилей</h1>
+        <h2>Перейти к конкретному автомобилю:</h2>
+      <a href="#">Geely Atlas кроссовер</a>
+      <a href="#">Geely Atlas Pro кроссовер</a>
+      <a href="#">Geely Coolray кроссовер</a>
+      <a href="#">Geely GS кроссовер</a>
+      <a href="#">Geely Tugella кроссовер</a>
+      <a href="#">Geely Emgrand X7 кроссовер</a>
+
+
+      {% for car in models %}
+        <div class="alert alert-danger">
+            <h3>{{ car.name_auto }}</h3>
+            {{ car.text_about_auto }}
+        </div>
+        {% endfor %}
+        </div>
+
+  {% else %}
+    <div class="register">
+        <h1>Каталог наших автомобилей</h1>
+        <h2>Перейти к конкретному автомобилю:</h2>
+      <a href="#">Geely Atlas кроссовер</a>
+      <a href="#">Geely Atlas Pro кроссовер</a>
+      <a href="#">Geely Coolray кроссовер</a>
+      <a href="#">Geely GS кроссовер</a>
+      <a href="#">Geely Tugella кроссовер</a>
+      <a href="#">Geely Emgrand X7 кроссовер</a>
+
+
+      {% for car in models %}
+        <div class="alert alert-info">
+            <h3>{{ car.name_auto }}</h3>
+            {{ car.text_about_auto }}
+        </div>
+        {% endfor %}
+        </div>
+    {% endif %}
+{% endblock content %}

@@ -1,7 +1,81 @@
 {% extends 'home/base.html' %}
 
-{% block title %} Новости {% endblock %}
 {% block content %}
+    <style type="text/css">
+
+        .alert-warning{
+            float: left;
+            clear: both;
+            width: 600px;
+            margin: 40px 34%;
+            text-align: left;
+            position: relative;
+            top: -200px;
+            left: -130px;
+        }
+
+        main .features h3{
+            font-size: 20px;
+            text-align: left;
+            clear: both;
+            float: left;
+            position: relative;
+            top: -89px;
+            left: 70px;
+        }
+        main .features p{
+            color: black;
+            font-size: 10px;
+            text-align: left;
+            clear: both;
+            float: left;
+            position: relative;
+            top: 10px;
+            left: 197px;
+
+        }
+
+      .alert-info{
+          float: left;
+          clear: both;
+          width: 800px;
+          margin: 40px 34%;
+          text-align: left;
+          position: relative;
+          top: -2868px;
+          left: 30px;
+        }
+
+      main .register h1{
+          font-size: 30px;
+          position: relative;
+          left: 232px;
+
+      }
+
+        main .register h3{
+            font-size: 20px;
+            text-align: left;
+            clear: both;
+            float: left;
+            position: relative;
+            top: -72px;
+            left: 80px;
+        }
+
+        main .register p{
+            color: black;
+            font-size: 10px;
+            text-align: left;
+            clear: both;
+            float: left;
+            position: relative;
+            top: 10px;
+            left: 250px;
+
+        }
+      </style>
+
   {% if user.is_authenticated %}
 
         <h4>Имя пользователя:</h4>
@@ -9,42 +83,39 @@
             <a href={%url 'index' %}><li><i class="fas fa-key"></i>Запись на ТО</li></a>
             <a href="#"><li><i class="fas fa-calendar"></i>Запись на тест-драйв</li></a>
             <a href={% url 'logout' %}><li><i class="fas fa-outdent"></i>Выйти</li></a>
-
-
         </ul>
-
                 <li>
                     <a class="nav-link" href="{% url 'register' %}"><i class="far fa-user-circle">{{user.username}}</i></a>
                 </li>
-        <div class="features">
-        <h1>Главная страница</h1>
-        <p>Рады вас приветсвовать в нашем Авто-Салоне "Geely Motors"
-            В меню "Каталог" вы можете узнать какие автомобили есть в наличии,
-            также если вы затрудняетесь с выбором автомобиля , наша компания предлогает вам
-            записаться на Тест-драйв(предварительно зарегистрироваться).
-            Где вы сможете проехать по специальной отведенной трассе, чтобы проверить как ведет
-            себя автомобиль в экстремальных условиях .</p>
-        <p>Также мы публикуем новости  о предстоящих новинках автомобилей марки "Geely"
-            или о скидках на "ТО"</p>
-        <img src="https://imgproxy.autocrm.ru/rVBpMxaRgTgfYEfdym3fxjnDkmuErxLyZehpolDnW0Q/rs:auto:0:0:1/dpr:1/q:100/g:sm/aHR0cHM6Ly8xOTUwMDQuc2VsY2RuLnJ1L3JlZi9iaWdfYWFiOTkyNmU2NmQ5ZTAyYzQxZmM5MWI5NTk5MDRiMTIuanBn.jpg">
-    </div>
+
+
+      <div class="features">
+        <h1>Новости из мира джили</h1>
+
+        {% for el in news %}
+            <div class="alert alert-warning">
+            <h3>{{ el.title }}</h3>
+                {{ el.full_text }}
+                <p>{{ el.data }}</p>
+            </div>
+            {% endfor %}
+      </div>
+
 
 
 
     {% else %}
-    <p class='register'>
-        <h3>Главная страница</h3>
-        <p>Рады вас приветсвовать в нашем Авто-Салоне "Geely Motors"
-            В меню "Каталог" вы можете узнать какие автомобили есть в наличии,
-            также если вы затрудняетесь с выбором автомобиля , наша компания предлогает вам
-            записаться на Тест-драйв(предварительно зарегистрироваться).
-            Где вы сможете проехать по специальной отведенной трассе, чтобы проверить как ведет
-            себя автомобиль в экстремальных условиях .</p>
-        <p>Также мы публикуем новости  о предстоящих новинках автомобилей марки "Geely"
-            или о скидках на "ТО"</p>
+    <div class="register">
+        <h1>Новости из мира джили</h1>
 
-    <img src="https://imgproxy.autocrm.ru/rVBpMxaRgTgfYEfdym3fxjnDkmuErxLyZehpolDnW0Q/rs:auto:0:0:1/dpr:1/q:100/g:sm/aHR0cHM6Ly8xOTUwMDQuc2VsY2RuLnJ1L3JlZi9iaWdfYWFiOTkyNmU2NmQ5ZTAyYzQxZmM5MWI5NTk5MDRiMTIuanBn.jpg">
+        {% for el in news %}
+            <div class="alert alert-info">
+            <h3>{{ el.title }}</h3>
+                {{ el.full_text }}
+                <p>{{ el.data }}</p>
+            </div>
+            {% endfor %}
+    </div>
 
-    </p>
     {% endif %}
 {% endblock content %}
