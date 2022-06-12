@@ -1,0 +1,61 @@
+{% extends 'home/base.html' %}
+{% block title %} {{ title }} {% endblock %}
+{% block content %}
+    <style type="text/css">
+    .features h1{
+        width: 20px;
+    }
+
+    .card-text {
+    float: left;
+    color: white;
+    margin-top: 69px;
+    text-align: center;
+    width: 75%;
+}
+    .card-text h1 {
+    text-align: center;
+    width: 75%;
+    font-size: 40px;
+    position: relative;
+    top: -241px;
+    left: 122px;
+    color: white;
+}
+
+    form{
+        margin-left: 32%;
+        width: 500px;
+        margin-top: 50px;
+        position: relative;
+        top: -186px;
+        left: -80px;
+    }
+    </style>
+    {% if user.is_authenticated %}
+
+        <h4>Имя пользователя:</h4>
+        <ul>
+            <a href={%url 'index' %}><li><i class="fas fa-key"></i>Запись на ТО</li></a>
+            <a href="{%url 'register_on_test_drive' %}"><li><i class="fas fa-calendar"></i>Запись на тест-драйв</li></a>
+            <a href={% url 'logout' %}><li><i class="fas fa-outdent"></i>Выйти</li></a>
+
+
+        </ul>
+
+                <li>
+                    <a class="nav-link" href="{% url 'register' %}"><i class="far fa-user-circle">{{user.username}}</i></a>
+                </li>
+    {% endif %}
+     <div class="card-text">
+           <h1>Запись на Тест-Драйв</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.name_person }}<br>
+            {{ form.phone }}<br>
+            {{ form.data }}<br>
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit">отправить данные</button>
+        </form>
+    </div>
+{% endblock content %}

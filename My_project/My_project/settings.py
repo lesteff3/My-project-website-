@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'home_page',
     'news',
     'register',
-    'katalog'
+    'katalog',
+    'Test_Drive'
 
 ]
 

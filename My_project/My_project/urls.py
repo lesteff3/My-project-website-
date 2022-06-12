@@ -10,7 +10,9 @@ urlpatterns = [
     path('', include('home_page.urls')),
     path('news/', include('news.urls')),
     path('register/', include('register.urls')),
-    path('catalog/', include('katalog.urls'))
+    path('catalog/', include('katalog.urls')),
+    path('test_drive/', include('Test_Drive.urls'))
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
