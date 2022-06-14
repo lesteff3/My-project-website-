@@ -58,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
+
 ]
 
 ROOT_URLCONF = 'My_project.urls'
@@ -95,6 +96,7 @@ DATABASES = {
        'PORT': '5432',
    }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
