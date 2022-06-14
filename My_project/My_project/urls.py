@@ -11,7 +11,8 @@ urlpatterns = [
     path('news/', include('news.urls')),
     path('register/', include('register.urls')),
     path('catalog/', include('katalog.urls')),
-    path('test_drive/', include('Test_Drive.urls'))
+    path('test_drive/', include('Test_Drive.urls')),
+    path('TO/', include('TO.urls'))
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

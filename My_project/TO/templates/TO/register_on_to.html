@@ -36,7 +36,7 @@
 
         <h4>Имя пользователя:</h4>
         <ul>
-            <a href={%url 'index' %}><li><i class="fas fa-key"></i>Запись на ТО</li></a>
+            <a href={%url 'register_on_to' %}><li><i class="fas fa-key"></i>Запись на ТО</li></a>
             <a href="{%url 'register_on_test_drive' %}"><li><i class="fas fa-calendar"></i>Запись на тест-драйв</li></a>
             <a href={% url 'logout' %}><li><i class="fas fa-outdent"></i>Выйти</li></a>
 
@@ -48,12 +48,13 @@
                 </li>
     {% endif %}
      <div class="card-text">
-           <h1>Запись на Тест-Драйв</h1>
+           <h1>Запись на ТО</h1>
         <form method="post">
             {% csrf_token %}
             {{ form.name_person }}<br>
             {{ form.phone }}<br>
             {{ form.car }}<br>
+            {{ form.text }}<br>
             {{ form.data }}<br>
             <span>{{ error }}</span>
             <button class="btn btn-success" type="submit">отправить данные</button>

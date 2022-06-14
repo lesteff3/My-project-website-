@@ -2,11 +2,31 @@
 
 
 {% block content %}
+    <style>
+    h1, .about {
+    text-align: center;
+    width: 75%;
+    font-size: 40px;
+    position: relative;
+    top: -74px;
+    left: 122px;
+    color: white;
+}
+    p, .about {
+    text-align: center;
+    width: 75%;
+    font-size: 20px;
+    position: relative;
+    top: -33px;
+    left: 122px;
+    color: white;
+}
+    </style>
     {% if user.is_authenticated %}
 
         <h4>Имя пользователя:</h4>
         <ul>
-            <a href={%url 'index' %}><li><i class="fas fa-key"></i>Запись на ТО</li></a>
+            <a href={%url 'register_on_to' %}><li><i class="fas fa-key"></i>Запись на ТО</li></a>
             <a href="{%url 'register_on_test_drive' %}"><li><i class="fas fa-calendar"></i>Запись на тест-драйв</li></a>
             <a href={% url 'logout' %}><li><i class="fas fa-outdent"></i>Выйти</li></a>
 
@@ -27,6 +47,10 @@
         </p>
         </div>
     {% else %}
+        <ul>
+        <a href={% url 'register' %}><li><i class="fas fa-save"></i>Регистрация</li></a>
+        <a href={% url 'login' %}><li><i class="fas fa-outdent"></i>Войти</li></a>
+      </ul>
 
     <p class="about">
         <h1>Контакты</h1>

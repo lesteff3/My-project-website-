@@ -2,36 +2,33 @@
 {% block title %} {{ title }} {% endblock %}
 {% block content %}
     <style type="text/css">
-    .features h1{
-        width: 20px;
+    .card-text img{
+        width: 1000px;
+        position: relative;
+        left: 60px;
+        top: -100px;
     }
 
-    .card-text {
-    float: left;
-    color: white;
-    margin-top: 69px;
-    text-align: center;
-    width: 75%;
-}
     .card-text h1 {
     text-align: center;
     width: 75%;
     font-size: 40px;
     position: relative;
-    top: -241px;
+    top: -220px;
     left: 122px;
     color: white;
 }
-
-    form{
-        margin-left: 32%;
-        width: 500px;
-        margin-top: 50px;
-        position: relative;
-        top: -186px;
-        left: -80px;
-    }
+    .card-text h5 {
+    text-align: center;
+    width: 75%;
+    font-size: 20px;
+    position: relative;
+    top: -220px;
+    left: 122px;
+    color: white;
+}
     </style>
+
     {% if user.is_authenticated %}
 
         <h4>Имя пользователя:</h4>
@@ -47,16 +44,11 @@
                     <a class="nav-link" href="{% url 'register' %}"><i class="far fa-user-circle">{{user.username}}</i></a>
                 </li>
     {% endif %}
-     <div class="card-text">
-           <h1>Запись на Тест-Драйв</h1>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.name_person }}<br>
-            {{ form.phone }}<br>
-            {{ form.car }}<br>
-            {{ form.data }}<br>
-            <span>{{ error }}</span>
-            <button class="btn btn-success" type="submit">отправить данные</button>
-        </form>
+    <div class="card-text">
+           <h1>{{ text }}</h1>
+            <h5>{{ one_more_text }}</h5>
+    <img src="https://geely.by/Mayakovskogo2_G.Banner.jpg">
     </div>
-{% endblock content %}
+
+
+{% endblock %}

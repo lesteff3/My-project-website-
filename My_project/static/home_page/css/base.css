@@ -159,7 +159,7 @@ h3, .register {
     width: 75%;
     font-size: 40px;
     position: relative;
-    top: 1px;
+    top: -76px;
     left: 122px;
     color: white;
 
@@ -171,7 +171,7 @@ p, .register {
     width: 75%;
     font-size: 20px;
     position: relative;
-    top: 5px;
+    top: -55px;
     left: 122px;
     color: white;
 

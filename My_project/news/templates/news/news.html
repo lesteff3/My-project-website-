@@ -74,13 +74,20 @@
             left: 250px;
 
         }
+
+        main .register h1 {
+            font-size: 30px;
+            position: relative;
+            left: 232px;
+            top: -100px;
+        }
       </style>
 
   {% if user.is_authenticated %}
 
         <h4>Имя пользователя:</h4>
         <ul>
-            <a href={%url 'index' %}><li><i class="fas fa-key"></i>Запись на ТО</li></a>
+            <a href={%url 'register_on_to' %}><li><i class="fas fa-key"></i>Запись на ТО</li></a>
             <a href="{%url 'register_on_test_drive' %}"><li><i class="fas fa-calendar"></i>Запись на тест-драйв</li></a>
             <a href={% url 'logout' %}><li><i class="fas fa-outdent"></i>Выйти</li></a>
         </ul>
@@ -105,6 +112,10 @@
 
 
     {% else %}
+      <ul>
+        <a href={% url 'register' %}><li><i class="fas fa-save"></i>Регистрация</li></a>
+        <a href={% url 'login' %}><li><i class="fas fa-outdent"></i>Войти</li></a>
+      </ul>
     <div class="register">
         <h1>Новости из мира джили</h1>
 

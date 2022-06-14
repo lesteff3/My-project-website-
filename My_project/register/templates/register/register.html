@@ -2,6 +2,20 @@
 {% load crispy_forms_tags %}
 {% block title %} {{ title }} {% endblock %}
 {% block content %}
+    <style>
+    ul li {
+    color: #ffffff;
+    display: block;
+    margin-top: 20px;
+        font-size: 14px;
+    text-decoration: none;
+    transition: transform.3s ease;
+    position: relative;
+    top: 11px;
+    left: -5px;
+}
+    </style>
+
      <div class="features">
         <form method="POST" action="{% url 'register' %}">
             {% csrf_token %}

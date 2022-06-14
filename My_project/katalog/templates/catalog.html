@@ -129,7 +129,7 @@
 
         <h4>Имя пользователя:</h4>
         <ul>
-            <a href={%url 'index' %}><li><i class="fas fa-key"></i>Запись на ТО</li></a>
+            <a href={%url 'register_on_to' %}><li><i class="fas fa-key"></i>Запись на ТО</li></a>
             <a href="{%url 'register_on_test_drive' %}"><li><i class="fas fa-calendar"></i>Запись на тест-драйв</li></a>
             <a href={% url 'logout' %}><li><i class="fas fa-outdent"></i>Выйти</li></a>
         </ul>
@@ -139,12 +139,12 @@
       <div class="card-text">
         <h1>Каталог наших автомобилей</h1>
         <h2>Перейти к конкретному автомобилю:</h2>
-      <a href="#">Geely Atlas кроссовер</a>
-      <a href="#">Geely Atlas Pro кроссовер</a>
-      <a href="#">Geely Coolray кроссовер</a>
-      <a href="#">Geely GS кроссовер</a>
-      <a href="#">Geely Tugella кроссовер</a>
-      <a href="#">Geely Emgrand X7 кроссовер</a>
+      <a href="{% url 'atlas' %}">Geely Atlas кроссовер</a>
+      <a href="{% url 'atlas-pro' %}">Geely Atlas Pro кроссовер</a>
+      <a href="{% url 'coolray' %}">Geely Coolray кроссовер</a>
+      <a href="{% url 'gs' %}">Geely GS кроссовер</a>
+      <a href="{% url 'tugella' %}">Geely Tugella кроссовер</a>
+      <a href="{% url 'emgrand' %}">Geely Emgrand кроссовер</a>
 
 
       {% for car in models %}
@@ -156,16 +156,19 @@
         </div>
 
   {% else %}
+      <ul>
+        <a href={% url 'register' %}><li><i class="fas fa-save"></i>Регистрация</li></a>
+        <a href={% url 'login' %}><li><i class="fas fa-outdent"></i>Войти</li></a>
+      </ul>
     <div class="register">
         <h1>Каталог наших автомобилей</h1>
         <h2>Перейти к конкретному автомобилю:</h2>
-      <a href="#">Geely Atlas кроссовер</a>
-      <a href="#">Geely Atlas Pro кроссовер</a>
-      <a href="#">Geely Coolray кроссовер</a>
-      <a href="#">Geely GS кроссовер</a>
-      <a href="#">Geely Tugella кроссовер</a>
-      <a href="#">Geely Emgrand X7 кроссовер</a>
-
+      <a href="{% url 'atlas' %}">Geely Atlas кроссовер</a>
+      <a href="{% url 'atlas-pro' %}">Geely Atlas Pro кроссовер</a>
+      <a href="{% url 'coolray' %}">Geely Coolray кроссовер</a>
+      <a href="{% url 'gs' %}">Geely GS кроссовер</a>
+      <a href="{% url 'tugella' %}">Geely Tugella кроссовер</a>
+      <a href="{% url 'emgrand' %}">Geely Emgrand кроссовер</a>
 
       {% for car in models %}
         <div class="alert alert-info">

@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'news',
     'register',
     'katalog',
-    'Test_Drive'
+    'Test_Drive',
+    'TO'
 
 ]
 

@@ -5,7 +5,7 @@ from django.forms import ModelForm, TextInput, DateInput
 class Register_on_test_driveForm(ModelForm):
     class Meta:
         model = Register_on_test_drive
-        fields = ['name_person', 'phone', 'car', 'data']
+        fields = ['name_person', 'phone', 'car', 'text', 'data']
 
         widgets = {
             'name_person': TextInput(attrs={
@@ -25,5 +25,9 @@ class Register_on_test_driveForm(ModelForm):
             'car': TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Автомобиль: Например Tugella',
+            }),
+            'text': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Причина: Например Плановое ТО',
             }),
         }

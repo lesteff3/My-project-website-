@@ -1,0 +1,270 @@
+{% extends 'home/base.html' %}
+{% block title %} {{ title }} {% endblock title %}
+
+
+{% block content %}
+    <style>
+    .end h1 {
+    font-size: 50px;
+    position: relative;
+    top: -250px;
+}
+
+    .end h2{
+        color: white;
+        font-size: 16px;
+        margin-block: 20px;
+        position: relative;
+        top: -121px;
+        left: 4px;
+    }
+    main .features h1 {
+    font-size: 50px;
+    position: relative;
+    top: -250px;
+}
+
+    .features h2{
+        position: relative;
+        top: -240px;
+    }
+
+    main .features p{
+        position: relative;
+        top: -121px;
+        left: 180px;
+    }
+
+    main .features img {
+    vertical-align: middle;
+    position: relative;
+    width: 450px;
+    top: -335px;
+    left: -253px;
+}
+     .technical p{
+        position: relative;
+        top: -121px;
+        left: -105px;
+    }
+    .technical h1{
+        font-size: 45px;
+        position: relative;
+        top: -276px;
+    }
+     .technical img{
+         vertical-align: middle;
+         position: relative;
+         width: 450px;
+         top: -397px;
+         left: 471px;
+     }
+
+    .register h1 {
+
+    text-align: center;
+    width: 75%;
+    font-size: 40px;
+    position: relative;
+    top: -123px;
+    left: 222px;
+    color: white;
+
+
+}
+
+    .register p {
+        text-align: center;
+    width: 75%;
+    font-size: 15px;
+    position: relative;
+    top: -117px;
+    left: 384px;
+    color: white;
+}
+
+     .register h2 {
+        text-align: center;
+    width: 75%;
+    font-size: 15px;
+    position: relative;
+    top: -130px;
+    left: 384px;
+    color: white;
+}
+
+
+
+    .register img {
+    vertical-align: middle;
+    position: relative;
+    width: 400px;
+    top: -301px;
+    left: -153px;
+
+
+}
+
+.end p{
+        color: white;
+        font-size: 16px;
+        margin-block: 20px;
+        position: relative;
+        top: -211px;
+        left: 141px;
+    }
+
+.end img{
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    width: 800px;
+    top: -100px;
+    left: 120px;
+
+}
+main .end a {
+    color: white;
+            font-size: 15px;
+            text-align: left;
+            clear: both;
+            float: left;
+            position: relative;
+            top: -300px;
+            left: 750px;
+}
+
+    .btn a{
+        color: white;
+        position: relative;
+        left: 450px;
+        top: -100px
+
+    }
+
+    </style>
+    <div class="left">
+    {% if user.is_authenticated %}
+        <h4>Имя пользователя:</h4>
+        <ul>
+            <a href={%url 'register_on_to' %}><li><i class="fas fa-key"></i>Запись на ТО</li></a>
+            <a href="{%url 'register_on_test_drive' %}"><li><i class="fas fa-calendar"></i>Запись на тест-драйв</li></a>
+            <a href={% url 'logout' %}><li><i class="fas fa-outdent"></i>Выйти</li></a>
+
+
+        </ul>
+
+                <li>
+                    <a class="nav-link" href="{% url 'register' %}"><i class="far fa-user-circle">{{user.username}}</i></a>
+                </li>
+        </div>
+        <div class="features">
+        <h1>Geely Coolray</h1>
+        <br><h2>Уникальный кроссовер, который обеспечивает своих владельцев:</h2>
+            <p>| Высокой степенью комфорта</p>
+            <p>| Современный молодежный вид</p>
+            <p>| Превосходным ходовыми качествами! </p>
+            <p>| Непривычное кол-во целиндров : 3 </p>
+        <img src="https://www.allcarz.ru/wp-content/uploads/2020/10/foto-coolray-2021_00.jpg">
+            </div>
+        <div class="technical">
+        <h1>Технические характеристики Geely Coolray :</h1>
+            <p>ДВС: Бензиновый, 1.5 150 л.с
+            <br>КПП: Автоматическая
+            <br>Привод: Передний
+            <br>Расход: 7 смешанный / 10 город <br> 6 трасса
+            <br>Разгон до 100: 9.5 сек</p>
+        <img src="https://s.auto.drom.ru/i24243/c/photos/fullsize/geely/sx11/geely_sx11_946521.jpg">
+        </div>
+        <div class="end">
+            <h1>Заключение</h1>
+            <p>Geely Coolray – новый компактный кроссовер популярного бренда из Китая.
+                Он начал производиться в Поднебесной несколько лет тому назад под названием
+                Geely SX11. А с марта 2020 года автомобиль начал продаваться и в России.
+                Для нашей страны он получил некоторые особенности.</p>
+            <p>Кроссовер привлекает к себе внимание ярким дизайном экстерьера.
+                Он во многом напоминает известного француза Renault Kaptur.
+                Но при этом машина не является его копией. Ей присущи уникальные и индивидуальные черты.
+                Авто может иметь двухцветную окраску кузова, при которой цвет крыши отличается от оттенка
+                остальных кузовных элементов. Машина имеет рельефные и объёмные формы.
+                Ей присуща современная светодиодная оптика с агрессивными узкими передними фарами и
+                небольшими оригинальными задними фонарями. Автомобиль обильно украшен хромом, что
+                является характерной чертой китайского автопрома</p>
+            <p>Салон новинки также очень яркий и двухцветный.
+                Отделка выполнена достаточно качественными и добротными материалами.
+                Приборная панель может быть цифровой, выполненной в виде большого экрана.
+                Мультимедиа отличается высоким качеством звучания, богатым набором опций и огромным сенсорным дисплеем.
+                Автомобиль наделён множеством функций комфорта и безопасности, а
+                также немалым числом электронных помощников. Многие из таких опций
+                обычно встречаются у авто более высокого класса и иной ценовой категории.</p>
+            <p>Учтены в автомобиле и все эксплуатационные требования с оптимизацией расходов на сервисное обслуживание
+                и последующий ремонт благодаря качественной сборке и покраске. Как уже отмечалось выше, немаловажна и
+                ценовая составляющая, которая выводит Geely Atlas далеко в лидеры
+                в глазах отечественного потребителя.</p>
+            <p>В нашей стране продажи нового Джили начались в марте 2020 года.
+                Несмотря на то, что мнения первых владельцев оказались несколько противоречивыми,
+                в целом автомобиль оказался более, чем достойным.
+                При этом его стоимость для такого уровня оснащённости весьма невелика</p>
+            <img src="https://dvizhok.su/assets/images/resources/17407/geely-coolray-2020-price-rus-interior-s.jpg">
+            <a href="{% url 'register_on_test_drive' %}"> Тест-драйв</a>
+            <a href="{% url 'catalog' %}">назад</a>
+
+        </div>
+    </div>
+
+
+
+    {% else %}
+      <ul>
+        <a href={% url 'register' %}><li><i class="fas fa-save"></i>Регистрация</li></a>
+        <a href={% url 'login' %}><li><i class="fas fa-outdent"></i>Войти</li></a>
+      </ul>
+    <div class='register'>
+        <h1>Geely Coolray</h1>
+        <br><h2>Уникальный кроссовер, который обеспечивает своих владельцев:</h2>
+            <p>| Высокой степенью комфорта</p>
+            <p>| Современный молодежный вид</p>
+            <p>| Превосходным ходовыми качествами! </p>
+            <p>| Непривычное кол-во целиндров : 3 </p>
+        <img src="https://www.allcarz.ru/wp-content/uploads/2020/10/foto-coolray-2021_00.jpg">
+            </div>
+        <div class="technical">
+        <h1>Технические характеристики Geely Coolray :</h1>
+            <p>ДВС: Бензиновый, 1.5 150 л.с
+            <br>КПП: Автоматическая
+            <br>Привод: Передний
+            <br>Расход: 7 смешанный / 10 город <br> 6 трасса
+            <br>Разгон до 100: 9.5 сек</p>
+        <img src="https://s.auto.drom.ru/i24243/c/photos/fullsize/geely/sx11/geely_sx11_946521.jpg">
+        </div>
+        <div class="end">
+            <h1>Заключение</h1>
+            <p>Неудивительно, что Geely Atlas позиционируется как умный кроссовер.
+                Практически вся начинка автомобиля подтверждает: многие ситуации на дороге машина способна самостоятельно
+                контролировать, позволяя водителю несколько расслабиться.</p>
+            <p>Благодаря таким характеристикам модель действительно можно назвать одним из лучших предложений в своем
+                классе на отечественном рынке.
+                Это по достоинству оценили уже многие, в том числе и силовые структуры, которые активно приобретают
+                Geely Atlas для оснащения оперативных подразделений.</p>
+            <p>Способна машина удивлять и в процессе движения, когда незначительные препятствия на пути вроде
+                «лежачих полицейских» вообще незаметны, а на остальных отсутствуют крен и «клевки».
+                Внутри салона создана максимально комфортная атмосфера, которую не испортит шум от движения, отсекаемый
+                отличной звукоизоляцией.</p>
+            <p>Учтены в автомобиле и все эксплуатационные требования с оптимизацией расходов на сервисное обслуживание
+                и последующий ремонт благодаря качественной сборке и покраске. Как уже отмечалось выше, немаловажна и
+                ценовая составляющая, которая выводит Geely Atlas далеко в лидеры
+                в глазах отечественного потребителя.</p>
+            <p>Остается добавить, что это только основные детали, способствующие росту популярности Geely Atlas
+                Многие другие достоинства обязательно раскроются в процессе эксплуатации.</p>
+            <p>Все это в итоге делает модель Geely Atlas по-настоящему неповторимой.</p>
+            <img src="https://dvizhok.su/assets/images/resources/17407/geely-coolray-2020-price-rus-interior-s.jpg">
+        </div>
+            <div class="btn" >
+            <a href="{% url 'catalog' %}">назад</a>
+            </div>
+
+
+        </div>
+    </div>
+    {% endif %}
+{% endblock content %}
